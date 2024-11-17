@@ -338,6 +338,10 @@ a.highlight {
         height: auto;
         margin: 0 auto; /* Center the image */
     }
+
+    .address-text {
+        display: none; /* Hide the text */
+    }
 }
 
 /* Modal Styles */
