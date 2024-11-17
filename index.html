@@ -1,5 +1,224 @@
-<html>
-  <body>
-    <h1>In code we trust. In freedom we soar. And in $BALD, we unite!</h1>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$BALD Token</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Top Navigation Menu -->
+        <nav class="top-nav">
+          <div class="logo">
+              <a href="/" class="logo-link">
+                  <img src="./img/logo.png" alt="BALD Logo" />
+              </a>
+          </div>
+          <!-- Hamburger Button -->
+          <button class="menu-toggle" aria-label="Toggle menu">
+              <i class="fas fa-bars"></i>
+          </button>
+          <ul class="nav-links">
+              <li><a class="nav-link" href='#about'>About $BALD</a></li>
+              <li><a class="nav-link" href='#buy'>Buy Now</a></li>
+              <li><a class="nav-link" href='#tokenomics'>Tokenomics</a></li>
+          </ul>
+        </nav>
+
+        <!-- Modal for Navigation -->
+        <div id="menu-modal" class="menu-modal">
+          <div class="floating-buttons">
+              <button class="modal-close" aria-label="Close menu">&times;</button>
+              <div class="floating-buttons">
+              <a class="nav-link" href="#about">About $BALD</a>
+              <a class="nav-link" href="#buy">Buy Now</a>
+              <a class="nav-link" href="#tokenomics">Tokenomics</a>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Main Content -->
+        <main id="main-content" class="main-content">
+            <div id="about" class="content-section active">
+                <div class="hero-text">
+                    <h1>Meet Bald, Your <span class="highlight">CFO</span></h1>
+                    <p class="subtitle">$BALD is the <span class="highlight">boldest meme token</span> in the crypto skies, led by a fearless bald eagle mascot <span class="highlight">soaring above the blockchain world</span>. Combining humor, community, and a vision for <span class="highlight">decentralized freedom</span>, $BALD is more than a meme—<span class="highlight">it's a movement</span>.</p>
+                    <p class="subtitle">Join Bald, the Chief Flying Officer, as he leads the flock <span class="highlight">on a mission to the moon</span>. Whether you're here to laugh, trade, or unite under the wing of innovation, <span class="highlight">$BALD welcomes you</span>. Take flight and celebrate the bold side of crypto!</p>
+                </div>
+                <div class="hero-image">
+                    <img src="./img/about.png" alt="Bald the Chief Flying Officer" />
+                </div>
+            </div>
+            <div id="buy" class="content-section">
+              <div class="hero-image">
+                <img src="./img/buy.png" alt="Bald the Chief Flying Officer" />
+              </div>
+              <div class="hero-text">
+                <h1 class="section-title">Buy Now</h1>
+                  <div class="step">
+                    <h3 class="highlight">Buy Solana</h3>
+                    <p>
+                      Download Solana Wallet (<a class="highlight" href="https://solflare.com" target="_blank">Solflare</a> or <a href="https://phantom.app" class="highlight" target="_blank">Phantom</a>) and purchase Solana. Add SOL to your wallet through an exchange.
+                    </p>
+                  </div>
+                  <div class="step">
+                    <h3 class="highlight">Swap SOL for $BALD</h3>
+                    <p>
+                      Open <a class="highlight" href="https://raydium.io" target="_blank">Raydium.io</a>, connect your wallet, and swap $SOL for $BALD. The contract address is already preset in the link provided.
+                    </p>
+                  </div>
+                  <div class="step">
+                    <h3 class="highlight">All Done</h3>
+                    <p>
+                      Welcome to the community of $BALD holders! Hold tight as we soar to the moon together. Not financial advice. DYOR.
+                    </p>
+                  </div>
+                </div>
+            </div>
+            <div id="tokenomics" class="content-section">
+                <div class="hero-text">
+                    <h1>Tokenomics</h1>
+                    <p>
+                        $BALD tokenomics are designed to empower the community. With a limited supply and fair distribution, 
+                        every token holder is an equal participant in shaping the future. Here's how we stand apart:
+                    </p>
+                    <ul class="tokenomics-points">
+                        <li><strong class="highlight">Total Supply:</strong> 1 Billion tokens, fully distributed to the community.</li>
+                        <li><strong class="highlight">No Minting:</strong> No new tokens can be minted, ensuring scarcity.</li>
+                        <li><strong class="highlight">Transparency:</strong> All transactions and wallets are public on the blockchain.</li>
+                        <li><strong class="highlight">Zero Tax:</strong> No transaction tax, enabling smooth and affordable trades.</li>
+                    </ul>
+                </div>
+                <div class="hero-image">
+                    <img src="./img/tokenomics.png" alt="Tokenomics illustration" />
+                </div>
+            </div>
+        </main>        
+
+        <!-- Bottom Navigation Menu -->
+        <nav class="bottom-nav">
+            <ul class="social-links">
+                <li class="address-container">
+                    <a href="#" id="copy-address" onclick="copyAddress()" title="Copy Address">
+                        <i class="fas fa-copy"></i>
+                        <span class="address-text">Address</span>
+                    </a>
+                    <div id="copy-success" class="success-tooltip" hidden>Copied!</div>
+                </li>
+                <li><a href="https://x.com/baldcfo" target="_blank" title="Twitter"><i class="fab fa-twitter fa-2x"></i></a></li>
+                <li><a href="https://t.me/baldcfo" target="_blank" title="Telegram"><i class="fab fa-telegram-plane fa-2x"></i></a></li>
+            </ul>
+        </nav>
+
+        <!-- JavaScript -->
+        <script>
+            // Function to show the corresponding section
+            function showSection(sectionId) {
+                // Hide all sections
+                document.querySelectorAll(".content-section").forEach(section => {
+                    section.classList.remove("active");
+                    section.style.display = "none"; // Ensure it's hidden
+                });
+
+                // Show the selected section
+                const targetSection = document.querySelector(sectionId);
+                if (targetSection) {
+                    targetSection.classList.add("active");
+                    targetSection.style.display = "flex"; // Make it visible
+                }
+            }
+
+            // Add event listeners to navigation links
+            document.querySelectorAll(".nav-link").forEach(link => {
+                link.addEventListener("click", (event) => {
+                    event.preventDefault(); // Prevent default anchor behavior
+                    const target = link.getAttribute("href"); // Get the href value (e.g., "#about-section")
+                    showSection(target); // Activate the corresponding section
+                    window.location.hash = target; // Update the URL hash in the browser
+                });
+            });
+
+            // Activate the correct section on page load
+            window.addEventListener("DOMContentLoaded", () => {
+                const currentHash = window.location.hash || "#about"; // Default to #about-section if no hash
+                showSection(currentHash); // Activate the section based on the hash
+            });
+
+
+            function copyAddress() {
+                const address = "0x1234567890ABCDEF1234567890ABCDEF12345678"; // Replace with the actual address
+                navigator.clipboard.writeText(address).then(() => {
+                    const successMessage = document.getElementById("copy-success");
+                    successMessage.hidden = false; // Show success message
+                    setTimeout(() => {
+                        successMessage.hidden = true; // Hide success message after 2 seconds
+                    }, 2000);
+                }).catch((err) => {
+                    console.error("Failed to copy address: ", err);
+                });
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                const menuToggle = document.querySelector(".menu-toggle");
+                const modal = document.querySelector("#menu-modal");
+                const modalClose = document.querySelector(".modal-close");
+                const navLinks = document.querySelectorAll(".floating-buttons .nav-link"); // All menu links
+
+                // Function to open the modal
+                const openModal = () => {
+                    modal.classList.add("show");
+                    document.body.style.overflow = "hidden"; // Disable scrolling
+                };
+
+                // Function to close the modal
+                const closeModal = () => {
+                    modal.classList.remove("show");
+                    document.body.style.overflow = ""; // Re-enable scrolling
+                };
+
+                // Event listener to open the modal when hamburger is clicked
+                menuToggle.addEventListener("click", openModal);
+
+                // Event listener to close the modal when the close button is clicked
+                modalClose.addEventListener("click", closeModal);
+
+                // Event listener to close the modal when clicking outside the modal content
+                modal.addEventListener("click", (event) => {
+                    if (event.target === modal) {
+                        closeModal();
+                    }
+                });
+
+                // Event listener to handle nav-link clicks without scrolling
+                navLinks.forEach((link) => {
+                    link.addEventListener("click", (event) => {
+                        event.preventDefault(); // Prevent the default anchor click behavior
+                        const targetId = link.getAttribute("href"); // Get the target section ID (e.g., "#about")
+                        window.location.hash = targetId; // Update the URL hash
+                        closeModal(); // Close the modal
+                    });
+                });
+
+                // Event listener to close the modal when pressing ESC
+                document.addEventListener("keydown", (event) => {
+                    if (event.key === "Escape") { // Check if ESC is pressed
+                        closeModal();
+                    }
+                });
+
+                // Event listener to close the modal on window resize if the width exceeds 768px
+                window.addEventListener("resize", () => {
+                    if (window.innerWidth > 768) {
+                        closeModal();
+                    }
+                });
+            });
+        </script>
+    </div>
+</body>
 </html>
